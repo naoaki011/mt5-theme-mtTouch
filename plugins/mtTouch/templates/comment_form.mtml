@@ -1,0 +1,37 @@
+<form id="commentform" action="<$mt:CGIPath$><$mt:CommentScript$>" method="post" >
+			<input type="hidden" name="static" value="1" />
+            <input type="hidden" name="entry_id" value="<$mt:EntryID$>" />
+            <input type="hidden" name="__lang" value="<$mt:BlogLanguage$>" />
+            <input type="hidden" name="parent_id" value="<$mt:CommentParentID$>" id="comment-parent-id" />
+            <input type="hidden" name="armor" value="1" />
+            <input type="hidden" name="preview" value="" />
+            <input type="hidden" name="sid" value="" />
+		
+			<h3 id="respond">Leave A Comment</h3>
+			<p>
+				<input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+				<label for="author">Name *</label>
+			</p>
+
+			<p>
+				<input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+				<label for="email">Mail (unpublished) *</label>
+			</p>
+	
+			<p>
+				<input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+				<label for="url">Website</label>
+			</p>
+
+			<p><textarea name="text" id="comment" tabindex="4"></textarea></p>
+		
+			<p>
+				<input name="submit" type="submit" id="submit" tabindex="5" value="Publish" />
+
+				<div id="loading" style="display:none">
+					<img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/comment-ajax-loader.gif" alt="" /> <p>Publishing...</p>
+
+				</div>
+			</p>
+			<div id="errors" style="display:none">There was an error. Please refresh the page and try again.</div>
+		</form>

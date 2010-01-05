@@ -1,6 +1,8 @@
 name: mtTouch
 id: mtTouch
 key: mtTouch
+version: 1.0 beta 1
+description: mtTouch is based on the work of the wpTouch project. It is released under the GNU GPL license.
 
 template_sets:
     mtTouch:
@@ -25,5 +27,22 @@ template_sets:
                     label: Stylesheet
                     outfile: mtTouch.styles.css
                     rebuild_me: 1
-
-
+            module:
+                comment_area:
+                    label: Comment Area
+                comment_form: 
+                    label: Comment Form
+                core_style:
+                    label: Core-Style
+                entry_display:
+                    label: Entry Display
+                footer:
+                    label: Footer
+                header:
+                    label: Header
+                headerbar:
+                    label: Headerbar
+                login_and_search:
+                    label: Login and Search
+                menu:
+                    label: Menu

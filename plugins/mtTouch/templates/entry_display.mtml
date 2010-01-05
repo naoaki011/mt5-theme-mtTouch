@@ -1,0 +1,44 @@
+ <div class="post" id="post-<$mt:EntryID$>">
+	<mt:If tag="EntryCommentCount">
+	<div class="comment-bubble">
+		<$mt:EntryCommentCount$>
+	</div>
+	</mt:If>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("a#arrow-<$mt:EntryID$>").click(function(event) {
+				$(this).toggleClass("post-arrow-down");
+				$('#entry-<$mt:EntryID$>').fadeToggle(500);
+			});	
+		});					
+	</script>
+
+	<a class="post-arrow" id="arrow-<$mt:EntryID$>" href="javascript: return false;"></a>				
+
+
+	<div class="calendar">
+		<div class="cal-month month-<$mt:EntryDate format="%m"$>"><$mt:EntryDate format="%b"$></div>
+		<div class="cal-date"><$mt:EntryDate format="%d"$></div>
+	</div>				
+				
+	 
+	<a class="h2" href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a>
+	<div class="post-author">
+		<span class="lead">By</span> <$mt:EntryAuthor$><br />
+		<mt:If tag="EntryCategory" ne="">
+		<span class="lead">Categories:</span>
+		<mt:EntryCategories>
+			<a href="<$mt:CategoryArchiveLink$>" title="View all posts in <$mt:CategoryLabel$>"><$mt:CategoryLabel$></a><br/>
+		</mt:EntryCategories>
+		</mt:If>
+		<span class="lead">Tags:</span>
+		<mt:EntryTags glue=", ">
+			<a href="<$mt:CGIPath$><$mt:SearchScript$>?IncludeBlogs=<$mt:BlogID$>&tag=<$mt:TagName$>&limit=20"><$mt:TagName$></a>
+		</mt:EntryTags>
+	</div>	
+	<div class="clearer"></div>	
+        <div id="entry-<$mt:EntryID$>" style="display:none" class="mainentry  full-justified">
+		<$mt:EntryBody words="30"$>
+		<a class="read-more" href="<$mt:EntryPermalink$>">Read This Post</a>
+	</div>  
+</div>

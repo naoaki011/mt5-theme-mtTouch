@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+	<meta name="generator" content="<$mt:ProductName version="1"$>" />
+	<meta http-equiv="Content-Type" content="text/html; charset=<$mt:PublishCharset$>" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+	<title>
+		<$mt:BlogName encode_html="1"$> - 
+		<$mt:var name="more_title_contents"$>
+	</title>
+	<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="<$mt:Link template="feed_recent"$>" />
+	<link rel="apple-touch-icon" href="<$mt:StaticWebPath$>plugins/mtTouch/images/icon-pool/Default.png" />
+	<link rel="stylesheet" href="<mt:Link template="Stylesheet"$>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<$mt:StaticWebPath$>plugins/mtTouch/css/gigpress.css" type="text/css" media="screen" />
+	<$mt:Include module="Core-Style"$>
+	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<$mt:Link template="MT jQuery plugin"$>" type="text/javascript" charset="utf-8"></script>
+	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.form.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.mtauth.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.mtgreeting.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.mtcomment.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/core.js" type="text/javascript" charset="utf-8"></script>
+
+<mt:If tag="ArchiveType" like="(Individual|Page)">
+<script type="text/javascript">
+$(document).ready(function(){
+   if ($('#commentform')) {
+      /* First, let's boot strap the comment form on the page. 
+       * In this one step, we take the default MT comment form and turn
+       * into a fully AJAXified comment form. 
+       */
+
+      var form = $('#commentform').commentForm({ 
+        target: '#commentlist',
+        entryId: <$mt:EntryID$>
+      });
+
+      /* Once the form is bootstrapped and we have a handle to it
+       * we then pass that as a handle to the reply function which
+       * provides the inline commenting ability.
+       */
+      <mt:Ignore>$('a[title=Reply]').reply({
+        sourceForm: form
+      });
+      $("#comment-greeting").greet();
+      $("#comments-form").onauthchange(function(evt, user) {
+         var openDataDiv = $("#comments-open-data");
+
+         if (openDataDiv && user.is_authenticated)
+         {
+            $("#comment-author", openDataDiv).val(user.name);
+            $("#comment-email", openDataDiv).val(user.email);
+            $("#comment-url", openDataDiv).val(user.url);
+            $(openDataDiv).fadeOut(1000);
+         }
+      });</mt:Ignore>
+   };
+});
+</script>
+</mt:If>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#submitLink").click(function() {
+				bnc_jquery_login_toggle();
+				bnc_jquery_menu_drop();
+			});
+		});
+	</script>
+	<mt:setvarblock name="if_single">
+		<script type="text/javascript">
+			function hideURLbar() {
+				window.scrollTo(0,1);
+			}
+			addEventListener("load", function() { 
+				setTimeout(hideURLbar, 0); }, false);
+		</script>
+	</mt:setvarblock>
+	
+	<mt:If tag="EntryID" gt="0">
+		<$mt:var name="if_single"$>
+	<mt:Else tag="PageID" gt="0">
+		<$mt:var name="if_single"$>
+	</mt:If>
+	<$mt:var name="more_header_javascript"$>
+</head>
+

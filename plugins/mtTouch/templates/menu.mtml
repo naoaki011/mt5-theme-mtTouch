@@ -1,0 +1,63 @@
+<div id="wptouch-menu" class="dropper"> 		
+        <div id="wptouch-menu-inner">
+	        <div id="menu-head">
+	        	<div id="tabnav">
+				<a href="#head-pages">Menu</a>
+		        	<a href="#head-tags">Tags</a>
+		        	<mt:IfArchiveTypeEnabled type="Category-Monthly">
+		        	<a href="#head-cats">Categories</a>
+				</mt:IfArchiveTypeEnabled>
+				<mt:IfArchiveTypeEnabled type="Monthly">
+				<a href="#head-months">Archives</a>
+				</mt:IfArchiveTypeEnabled>
+				<a href="#head-account" onclick="bnc_jquery_login_toggle();">Login</a>
+			</div>
+	
+			<ul id="head-pages">
+				<li><a href="http://www.codemonkeyramblings.com/wordpress"><img src="http://www.codemonkeyramblings.com/wordpress/wp-content/plugins/wptouch/images/icon-pool/Default.png" alt=""/>Home</a></li>            
+				<li><a href="http://www.codemonkeyramblings.com/wordpress/?feed=rss2"><img src="http://www.codemonkeyramblings.com/wordpress/wp-content/plugins/wptouch/images/icon-pool/RSS.png" alt="" />RSS Feed</a></li>
+				<li><a href="mailto:mikerthomsen@gmail.com"><img src="http://www.codemonkeyramblings.com/wordpress/wp-content/plugins/wptouch/images/icon-pool/Mail.png" alt="" />E-Mail</a></li>           
+			</ul>
+			<mt:IfArchiveTypeEnabled type="Category-Monthly">
+			<ul id="head-cats">
+				<mt:Categories>
+					<li><a href="<$mt:CategoryArchiveLink$>"><$mt:CategoryLabel$> - (<$mt:CategoryCount$>)</a></li>
+				</mt:Categories>
+			</ul>
+			</mt:IfArchiveTypeEnabled>
+			<mt:IfArchiveTypeEnabled type="Monthly">
+				    <mt:ArchiveList archive_type="Monthly">
+				        <mt:ArchiveListHeader>
+				        	<ul id="head-months">
+				        </mt:ArchiveListHeader>
+				        		<li><a href="<$mt:ArchiveLink$>"><$mt:ArchiveTitle$></a></li>
+				        <mt:ArchiveListFooter>
+				        	</ul>
+				        </mt:ArchiveListFooter>
+				    </mt:ArchiveList>
+			</mt:IfArchiveTypeEnabled>
+			<ul id="head-tags">
+				<li>
+					<ul class="wp-tag-cloud">
+						<mt:Tags top="30">
+							<li><a class="tag-link-<$mt:TagID$>" style="font-size: 13px;" title="<$mt:TagCount$> topics" href="<$mt:CGIPath$><$mt:SearchScript$>?IncludeBlogs=<$mt:BlogID$>&tag=<$mt:TagName$>&limit=20"><$mt:TagName$></a></li>
+						</mt:Tags>
+					</ul>
+				</li>
+			</ul>
+
+		<ul id="head-account">
+			<li class="text">
+				Enter your username and password<br />in the boxes above.
+				<mt:IfRegistrationAllowed>
+				<div class="right">
+					Not registered yet?<br/>You can <a href="<mt:var name="script_url">?__mode=signup&amp;blog_id=<$mt:BlogID>&amp;">sign-up here</a>!
+				</div>
+				</mt:IfRegistrationAllowed>
+			</li>
+
+		</ul>
+			</div>
+		</div>
+    </div>
+
