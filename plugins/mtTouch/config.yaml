@@ -1,0 +1,29 @@
+name: mtTouch
+id: mtTouch
+key: mtTouch
+
+template_sets:
+    mtTouch:
+        label: mtTouch
+        order: 100
+        base_path: templates
+        templates:
+            index:
+                main_index:
+                    label: Main Index
+                    outfile: index.html
+                    rebuild_me: 1
+                archive_index:
+                    label: Archive Index
+                    outfile: archives.html
+                    rebuild_me: 1
+                mt_jquery_plugin:
+                    label: MT jQuery Plugin
+                    outfile: jquery.mt.js
+                    rebuild_me: 1
+                stylesheet:
+                    label: Stylesheet
+                    outfile: mtTouch.styles.css
+                    rebuild_me: 1
+
+

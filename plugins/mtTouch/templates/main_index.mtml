@@ -1,0 +1,76 @@
+<$mt:Include module="Header"$>
+
+
+<body class="classic-wptouch-bg">
+<!-- New noscript check, we need js on now folks -->
+<noscript>
+<div id="noscript-wrap">
+	<div id="noscript">
+		<h2>Notice</h2>
+		<p>JavaScript for Mobile Safari is currently turned off.</p>
+		<p>Turn it on in <em>Settings &rsaquo; Safari</em><br /> to view this website.</p>
+	</div>
+</div>
+</noscript>
+<!-- Prowl: if DM is sent, let's tell the user what happened -->
+
+	<$mt:Include module="Login and Search"$>
+	<$mt:Include module="Menu"$>
+	<$mt:Include module="Headerbar"$>
+
+<div id="drop-fade">
+				    
+    	<a id="searchopen" class="top" href="#" onclick="bnc_jquery_search_toggle(); return false;">Search</a>
+
+	
+	
+	
+	
+ <!-- #start the Prowl Message Area -->
+ <div id="prowl-message" style="display:none">
+ 	 <div id="push-style-bar"></div><!-- filler to get the styling just right -->
+	 <img src="http://www.codemonkeyramblings.com/wordpress/wp-content/plugins/wptouch/themes/core/core-images/push-icon.png" alt="push icon" />
+	 <h4>Send a Message</h4>
+	 <p>This message will be pushed to the admin's iPhone instantly.</p>
+	 
+	 <form id="prowl-direct-message" method="post" action="/wordpress/">
+	 	<p>
+
+	 		<input name="prowl-msg-name"  id="prowl-msg-name" type="text" />
+	 		<label for="prowl-msg-name">Name</label>
+	 	</p>
+
+		<p>
+			<input name="prowl-msg-email" id="prowl-msg-email" type="text" />
+			<label for="prowl-msg-email">E-Mail</label>
+		</p>
+
+		<textarea name="prowl-msg-message"></textarea>
+		<input type="hidden" name="wptouch-prowl-message" value="1" /> 
+		<input type="hidden" name="_nonce" value="ba892595fe" />			
+		<input type="submit" name="prowl-submit" value="Send Now" id="prowl-submit" />
+	 </form>
+	<div class="clearer"></div>
+ </div>
+
+
+</div>
+
+<!-- #start the wptouch plugin use check -->
+
+<div class="content">
+		
+	<div class="result-text"></div>
+
+
+<mt:Entries>
+	<$mt:Include module="Entry Display"$>
+</mt:Entries>
+	
+</div><!-- #End post -->
+
+
+	<$mt:Include module="Footer"$>
+
+</body>
+</html>
