@@ -20,7 +20,36 @@
 	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.mtgreeting.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.mtcomment.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/core.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
 
+function mtTouch_hidetop() {
+	bnc_jquery_login_toggle();
+	bnc_jquery_menu_drop();
+}
+
+function fetchUserCallback(u) {
+	if (!u || !u.name) return;
+	$("#head-account li.text").html('<p>Thanks for signing in, ' + u.name + '</p>');
+	mtTouch_hidetop();
+}
+
+$(document).ready(function() {
+	$.fn.movabletype.fetchUser(fetchUserCallback);
+	$("#btnSubmit").click(function() {
+		$("#loginform").ajaxSubmit({
+			success: function(responseText, statusText) {
+				var responseObject = eval('(' + responseText + ')');
+				
+				if (responseObject.successful)
+				{
+					$.fn.movabletype.clearUser();
+					$.fn.movabletype.fetchUser(fetchUserCallback);
+				}
+			}
+		});
+	});
+});
+</script>
 <mt:If tag="ArchiveType" like="(Individual|Page)">
 <script type="text/javascript">
 $(document).ready(function(){
@@ -35,34 +64,67 @@ $(document).ready(function(){
         entryId: <$mt:EntryID$>
       });
 
-      /* Once the form is bootstrapped and we have a handle to it
-       * we then pass that as a handle to the reply function which
-       * provides the inline commenting ability.
-       */
-      <mt:Ignore>$('a[title=Reply]').reply({
-        sourceForm: form
-      });
-      $("#comment-greeting").greet();
-      $("#comments-form").onauthchange(function(evt, user) {
-         var openDataDiv = $("#comments-open-data");
 
-         if (openDataDiv && user.is_authenticated)
+
+
+      //$("#comment-greeting").greet();
+      $("#commentform").onauthchange(function(evt, user) {
+
+         if (user.is_authenticated)
          {
-            $("#comment-author", openDataDiv).val(user.name);
-            $("#comment-email", openDataDiv).val(user.email);
-            $("#comment-url", openDataDiv).val(user.url);
-            $(openDataDiv).fadeOut(1000);
+            $("#author", this).val(user.name).parent().fadeOut(500);
+            $("#email", this).val(user.email).parent().fadeOut(500);
+            $("#url", this).val(user.url).parent().fadeOut(500);
          }
-      });</mt:Ignore>
+      });
    };
 });
 </script>
 </mt:If>
+
+<mt:If tag="ArchiveType" like="(Daily|Weekly|Monthly|Yearly|Category)">
+	<$mt:var name="add_ajax_more" value="1"$>
+<mt:Else name="main_index">
+	<$mt:var name="add_ajax_more" value="1"$>
+</mt:If>
+<mt:If name="add_ajax_more">
+<script type="text/javascript">
+	lastID = -1;
+	contentArea = null;
+	contentNav = null;
+	$(document).ready(function() {
+		contentArea = $("#contentArea");
+		contentNav = $("div.content-nav:first", contentArea);
+		$("#lnkMore").click(function() {
+
+			$.ajax({
+
+				url: '<$mt:CGIPath$>plugins/mtTouch/mt-mttouch.cgi?__mode=ajax_show_more_entries&blog_id=<$mt:BlogID$>&last_entry=' + lastID,
+				type: 'POST',
+				success: function(data, textStatus)
+				{
+					try {
+						var responseObj = eval('(' + data + ')');
+						if (responseObj.lastID == -1) return;
+						//$(responseObj.updateHTML).appendTo(contentArea);
+						$(contentNav).before($(responseObj.updateHTML));
+						lastID = responseObj.lastID;
+					} catch (ex) {
+						//The only likely reason for this to fail for now would be that it returns an empty string because
+						//the offset has gone past the point of any data that can be loaded
+					}
+				}
+
+			});
+		});
+	});
+</script>
+</mt:If>
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#submitLink").click(function() {
-				bnc_jquery_login_toggle();
-				bnc_jquery_menu_drop();
+				mtTouch_hidetop();
 			});
 		});
 	</script>
@@ -83,4 +145,3 @@ $(document).ready(function(){
 	</mt:If>
 	<$mt:var name="more_header_javascript"$>
 </head>
-

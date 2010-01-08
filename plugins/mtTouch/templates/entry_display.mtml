@@ -17,23 +17,23 @@
 
 
 	<div class="calendar">
-		<div class="cal-month month-<$mt:EntryDate format="%m"$>"><$mt:EntryDate format="%b"$></div>
+		<div class="cal-month month-<$mt:EntryDate format="%m"$>"><$mt:EntryDate encode_html="1" format="%b"$></div>
 		<div class="cal-date"><$mt:EntryDate format="%d"$></div>
 	</div>				
 				
 	 
-	<a class="h2" href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a>
+	<a class="h2" href="<$mt:EntryPermalink$>"><$mt:EntryTitle encode_html="1"$></a>
 	<div class="post-author">
-		<span class="lead">By</span> <$mt:EntryAuthor$><br />
+		<span class="lead">By</span> <$mt:EntryAuthor encode_html="1"$><br />
 		<mt:If tag="EntryCategory" ne="">
 		<span class="lead">Categories:</span>
 		<mt:EntryCategories>
-			<a href="<$mt:CategoryArchiveLink$>" title="View all posts in <$mt:CategoryLabel$>"><$mt:CategoryLabel$></a><br/>
+			<a href="<$mt:CategoryArchiveLink$>" title="View all posts in <$mt:CategoryLabel encode_html="1"$>"><$mt:CategoryLabel encode_html="1"$></a><br/>
 		</mt:EntryCategories>
 		</mt:If>
 		<span class="lead">Tags:</span>
 		<mt:EntryTags glue=", ">
-			<a href="<$mt:CGIPath$><$mt:SearchScript$>?IncludeBlogs=<$mt:BlogID$>&tag=<$mt:TagName$>&limit=20"><$mt:TagName$></a>
+			<a href="<$mt:CGIPath$><$mt:SearchScript$>?IncludeBlogs=<$mt:BlogID$>&amp;tag=<$mt:TagName encode_html="1"$>&amp;limit=20"><$mt:TagName encode_html="1"$></a>
 		</mt:EntryTags>
 	</div>	
 	<div class="clearer"></div>	

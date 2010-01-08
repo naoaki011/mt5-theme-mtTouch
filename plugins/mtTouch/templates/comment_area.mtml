@@ -1,8 +1,7 @@
-<mt:If tag="EntryCommentCount" gt="0">
 <div id="comment_wrapper">
 	<h3 id="com-head" onclick="bnc_showhide_coms_toggle();" class="">
 		<img alt="arrow" src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/com_arrow.png" id="com-arrow" class=""/>
-		<$mt:EntryCommentCount$> <mt:If tag="EntryCommentCount" gt="1">Comments<mt:Else>Comment</mt:If>
+		<$mt:EntryCommentCount$> <mt:If tag="EntryCommentCount" gt="1">Comments<mt:Else tag="EntryCommentCount" eq="0">Comments<mt:Else>Comment</mt:If>
 	</h3>
 	<ol id="commentlist" class="commentlist" style="display: none;">
 		<mt:Comments>
@@ -25,9 +24,8 @@
   	<div style="display: none;" id="refresher">
 		<img alt="checkmark" src="<$mt:StaticWebPath$>plugins/mtTouch/images/good.png"/>
 		<h3>Comment added.</h3>
-		 <a href="javascript:this.location.reload();">Refresh the page</a> to post a new comment.
+		È <a href="javascript:this.location.reload();">Refresh the page</a> to post a new comment.
 	</div>
 	<$mt:Include module="Comment Form"$>
   </div><!--textinputwrap div-->
 </div>
-</mt:If>

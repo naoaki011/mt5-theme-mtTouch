@@ -14,9 +14,9 @@
 			</div>
 	
 			<ul id="head-pages">
-				<li><a href="http://www.codemonkeyramblings.com/wordpress"><img src="http://www.codemonkeyramblings.com/wordpress/wp-content/plugins/wptouch/images/icon-pool/Default.png" alt=""/>Home</a></li>            
-				<li><a href="http://www.codemonkeyramblings.com/wordpress/?feed=rss2"><img src="http://www.codemonkeyramblings.com/wordpress/wp-content/plugins/wptouch/images/icon-pool/RSS.png" alt="" />RSS Feed</a></li>
-				<li><a href="mailto:mikerthomsen@gmail.com"><img src="http://www.codemonkeyramblings.com/wordpress/wp-content/plugins/wptouch/images/icon-pool/Mail.png" alt="" />E-Mail</a></li>           
+				<li><a href="<$mt:BlogURL$>"><img src="<$mt:StaticWebPath$>plugins/mtTouch/images/icon-pool/Default.png" alt=""/>Home</a></li>            
+				<li><a href="<$mt:Link template="Feed - Recent Entries"$>"><img src="<$mt:StaticWebPath$>plugins/mtTouch/images/icon-pool/RSS.png" alt="" />RSS Feed</a></li>
+				<li><a href="mailto:"><img src="<$mt:StaticWebPath$>plugins/mtTouch/images/icon-pool/Mail.png" alt="" />E-Mail</a></li>           
 			</ul>
 			<mt:IfArchiveTypeEnabled type="Category-Monthly">
 			<ul id="head-cats">
@@ -40,7 +40,7 @@
 				<li>
 					<ul class="wp-tag-cloud">
 						<mt:Tags top="30">
-							<li><a class="tag-link-<$mt:TagID$>" style="font-size: 13px;" title="<$mt:TagCount$> topics" href="<$mt:CGIPath$><$mt:SearchScript$>?IncludeBlogs=<$mt:BlogID$>&tag=<$mt:TagName$>&limit=20"><$mt:TagName$></a></li>
+							<li><a class="tag-link-<$mt:TagID$>" style="font-size: 13px;" title="<$mt:TagCount$> topics" href="<$mt:CGIPath$><$mt:SearchScript$>?IncludeBlogs=<$mt:BlogID$>&amp;tag=<$mt:TagName$>&amp;limit=20"><$mt:TagName$></a></li>
 						</mt:Tags>
 					</ul>
 				</li>
@@ -51,7 +51,7 @@
 				Enter your username and password<br />in the boxes above.
 				<mt:IfRegistrationAllowed>
 				<div class="right">
-					Not registered yet?<br/>You can <a href="<mt:var name="script_url">?__mode=signup&amp;blog_id=<$mt:BlogID>&amp;">sign-up here</a>!
+					Not registered yet?<br/>You can <a href="<$mt:CGIPath$><$mt:CommentScript$>?__mode=signup&amp;blog_id=<$mt:BlogID>&amp;">sign-up here</a>!
 				</div>
 				</mt:IfRegistrationAllowed>
 			</li>
@@ -60,4 +60,3 @@
 			</div>
 		</div>
     </div>
-

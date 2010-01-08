@@ -46,3 +46,7 @@ template_sets:
                     label: Login and Search
                 menu:
                     label: Menu
+                noscript_message:
+                    label: Noscript Message
+                prowl:
+                    label: Prowl

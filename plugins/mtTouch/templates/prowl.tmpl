@@ -1,0 +1,32 @@
+ <div id="drop-fade">
+				    
+    	<a id="searchopen" class="top" href="#" onclick="bnc_jquery_search_toggle(); return false;">Search</a>
+ <!-- #start the Prowl Message Area -->
+ <div id="prowl-message" style="display:none">
+ 	 <div id="push-style-bar"></div><!-- filler to get the styling just right -->
+	 <img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/push-icon.png" alt="push icon" />
+	 <h4>Send a Message</h4>
+	 <p>This message will be pushed to the admin's iPhone instantly.</p>
+	 
+	 <form id="prowl-direct-message" method="post" action="/wordpress/">
+	 	<p>
+
+	 		<input name="prowl-msg-name"  id="prowl-msg-name" type="text" />
+	 		<label for="prowl-msg-name">Name</label>
+	 	</p>
+
+		<p>
+			<input name="prowl-msg-email" id="prowl-msg-email" type="text" />
+			<label for="prowl-msg-email">E-Mail</label>
+		</p>
+
+		<textarea name="prowl-msg-message"></textarea>
+		<input type="hidden" name="wptouch-prowl-message" value="1" /> 
+		<input type="hidden" name="_nonce" value="ba892595fe" />			
+		<input type="submit" name="prowl-submit" value="Send Now" id="prowl-submit" />
+	 </form>
+	<div class="clearer"></div>
+ </div>
+
+
+</div>

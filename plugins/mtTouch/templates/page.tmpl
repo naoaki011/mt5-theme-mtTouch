@@ -1,0 +1,74 @@
+<$mt:PageTitle setvar="more_title_contents"$>
+<$mt:Include module="Header"$>
+	
+<body class="classic-wptouch-bg">
+	<$mt:Include module="Noscript Message"$>
+	<$mt:Include module="Login and Search"$>
+	<$mt:Include module="Menu"$>
+	<$mt:Include module="Headerbar"$>
+	<$mt:Include moduler="Prowler"$>
+
+	<div class="content">
+		<div class="post">
+			<a class="sh2" href="<$mt:PagePermalink$>" rel="bookmark" title="Permanent Link to <$mt:PageTitle$>"><$mt:PageTitle$></a>
+			<div class="single-post-meta-top"><$mt:PageDate format="%b %d, %Y @ %H:%S"$> &rsaquo; <$mt:PageAuthorDisplayName$><br />
+				<a href="#respond">&darr; Leave a comment</a>
+			</div>
+		<div class="clearer"></div>
+	</div>
+
+			
+         <div class="post" id="post-<$mt:PageID$>">
+         	<div id="singlentry" class=" full-justified">
+            		<$mt:PageBody$>
+            		<p>&nbsp;</p>
+		</div>
+
+		<ul id="post-options">
+			<li>
+				<mt:PagePrevious>
+      					<a href="<$mt:PagePermalink$>" title="<$mt:PageTitle escape="html"$>" id="oprev"></a>
+    				</mt:PagePrevious>
+    			</li>
+			<li><a href="mailto:?subject=<$mt:BlogName$> - <$mt:PageTitle$>&body=Check out this post:%20<$mt:PagePermalink encode_url="1"$>" onclick="return confirm('Mail a link to this post?');" id="omail"></a></li>
+			<li><a href="javascript:return false;" onclick="wptouch_toggle_twitter();" id="otweet"></a></li>
+			<li><a href="javascript:return false;" onclick="wptouch_toggle_bookmarks();" id="obook"></a></li>
+			<li>
+				<mt:PageNext>
+					<a href="<$mt:PagePermalink$>" title="<$mt:PageTitle escape="html"$>" id="onext"></a>
+    				</mt:PageNext>
+			</li>
+		</ul>
+    </div>
+
+  	<div id="twitter-box" style="display:none">
+		<ul>
+			<li><a href="javascript:return false;" onclick="window.location='tweetie:'+window.location"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/twitter/tweetie.png" alt="tweetie" /> Post to Tweetie</a></li>
+
+			<li><a href="javascript:return false;" onclick="window.location='twitterrific:///post?message='+escape(window.location)"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/twitter/twitteriffic.png" alt="twitteriffic" /> Post to Twitteriffic</a></li>
+			<li><a href="javascript:return false;" onclick="window.location='twit:'+window.location"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/twitter/twittelator.png" alt="twittelator" /> Post to Twittelator Pro</a></li>
+		</ul>
+	</div>
+
+  	<div id="bookmark-box" style="display:none">
+		<ul>
+
+			<li><a href="http://del.icio.us/post?url=<$mt:PagePermalink encode_url="1"$>&title=<$mt:PageTitle encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/delicious.jpg" alt="" /> Del.icio.us</a></li>
+			<li><a href="http://digg.com/submit?phase=2&url=<$mt:PagePermalink encode_url="1"$>&title=<$mt:PageTitle encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/digg.jpg" alt="" /> Digg</a></li>
+			<li><a href="http://technorati.com/faves?add=<$mt:PagePermalink encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/technorati.jpg" alt="" /> Technorati</a></li>
+			<li><a href="http://ma.gnolia.com/bookmarklet/add?url=<$mt:PagePermalink encode_url="1"$>&title=<$mt:PageTitle encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/magnolia.jpg" alt="" /> Magnolia</a></li>
+			<li><a href="http://www.newsvine.com/_wine/save?popoff=0&u=<$mt:PagePermalink encode_url="1"$>&title=<$mt:PageTitle encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/newsvine.jpg" target="_blank"> Newsvine</a></li>
+
+			<li class="noborder"><a href="http://reddit.com/submit?url=<$mt:PagePermalink encode_url="1"$>&title=<$mt:PageTitle encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/reddit.jpg" alt="" /> Reddit</a></li>
+		</ul>
+	</div>
+
+	<$mt:Include module="Comment Area"$>
+
+
+	</div>
+
+	
+	<$mt:Include module="Footer"$>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<mt:SetVarBlock name="more_title_contents">
+<$mt:ArchiveTitle$> Archives
+</mt:SetVarBlock>
+<$mt:Include module="Header"$>
+
+
+<body class="classic-wptouch-bg">
+	<$mt:Include module="Noscript Message"$>
+	<$mt:Include module="Login and Search"$>
+	<$mt:Include module="Menu"$>
+	<$mt:Include module="Headerbar"$>
+	<$mt:Include module="Prowler"$>
+
+	<div class="content" id="contentArea">
+	
+	
+		<mt:If name="datebased_archive">
+		<mt:Ignore><!-- Title for category-monthly entry listings --></mt:Ignore>
+		<h1 id="page-title" class="archive-title"><$mt:ArchiveTitle$> Archives</h1>
+		<mt:Else>
+		<mt:Ignore><!-- Title for category entry listings --></mt:Ignore>
+		<h1 id="page-title" class="archive-title">Recently in <em><$mt:ArchiveTitle$></em> Category</h1>
+		</mt:If>
+
+		<mt:Entries limit="10">
+		<$mt:Include module="Entry Display"$>
+		<mt:If name="__last__">
+		<script type="text/javascript">
+			lastID = <$mt:EntryID$>;
+		</script>
+		</mt:If>
+		</mt:Entries>
+
+
+		<div style="text-align:center" class="content-nav">
+			<mt:ArchivePrevious><a href="<$mt:ArchiveLink$>">&laquo; <$mt:ArchiveTitle$></a> |</mt:ArchivePrevious>
+			<a href="<$mt:Link template="main_index"$>">Main Index</a> |
+			<a href="<$mt:Link template="archive_index"$>">Archives</a>
+			<mt:ArchiveNext>| <a href="<$mt:ArchiveLink$>"><$mt:ArchiveTitle$> &raquo;</a></mt:ArchiveNext>
+		</div>
+	</div>
+	<div style="text-align:center"
+		<a href="#" id="lnkMore">More!</a>
+	</div>
+	<$mt:Include module="Footer"$>
+
+</body>
+</html>
