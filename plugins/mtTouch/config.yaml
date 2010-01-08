@@ -27,6 +27,36 @@ template_sets:
                     label: Stylesheet
                     outfile: mtTouch.styles.css
                     rebuild_me: 1
+            individual:
+                entry:
+                    label: Entry
+                    mappings:
+                        entry_archive:
+                            archive_type: Individual
+            page:
+                page:
+                    label: Page
+                    mappings:
+                        entry_archive:
+                            archive_type: Page
+            archive:
+                monthly_entry_listing:
+                    label: Monthly Entry Listing
+                    mappings:
+                        monthly:
+                            archive_type: Monthly
+                category_entry_listing:
+                    label: Category Entry Listing
+                    mappings:
+                        category:
+                            archive_type: Category
+            system:
+                dynamic_error:
+                    label: Dynamic Error
+                    description_label: Displays errors for dynamically published templates.
+                search_results:
+                    label: Search Results
+                    description_label: Displays results of a search.
             module:
                 comment_area:
                     label: Comment Area
