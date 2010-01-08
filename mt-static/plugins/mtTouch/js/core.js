@@ -51,6 +51,12 @@ function bnc_jquery_menu_drop() {
 }
 
 function bnc_jquery_login_toggle() {
+	$.fn.movabletype.fetchUser();
+	user = $.fn.movabletype.getUser();
+	if (user.name != undefined) {
+		$("#head-account li.text").html('<p>Thanks for signing in, ' + user.name + '</p>');
+		return;
+	} 
 	$('#wptouch-login').fadeToggle(400);
 }
 
