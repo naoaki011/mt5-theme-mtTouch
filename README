@@ -1,2 +1,7 @@
 License: GNU GPL
 License addendum: BraveNewCode (http://www.bravenewcode.com), the authors of WPtouch, may incorporate any modifications, bug fixes or other additions to this plugin into WPtouch in such a manner as may permit dual-licensing of WPtouch under the GNU GPL and a commercial, non-open source license, the licenses of any future additions from other sources aside from Mike Thomsen notwithstanding.
+
+Installation: 
+
+1) Copy the contents of the mt-static and plugins directories to the appropriate directories in Movable Type or Melody.
+2) Run chmod 755 on plugins/mtTouch and plugins/mtTouch/mt-mttouch.cgi or the Ajax functionality for loading more entries will not work.

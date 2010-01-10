@@ -98,3 +98,4 @@ template_sets:
                     label: Noscript Message
                 prowl:
                     label: Prowl
+

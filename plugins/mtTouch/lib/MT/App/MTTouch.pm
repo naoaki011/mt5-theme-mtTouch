@@ -25,15 +25,32 @@ sub ajax_show_more
         unless ($lastEntryId) {
 		return JSON::objToJson( { successful => 0, message => 'No last entry ID specified' } );
         }
+
         use MT::Blog;
         use MT::Entry;
         use MT::Template;
         use MT::Template::Context;
+
         my $template = MT::Template->load({ blog_id => $blog_id, name => 'Entry Display' });
         my $ctx = MT::Template::Context->new();
+
         $ctx->stash('blog', MT::Blog->load({id => $blog_id}) );
+
 	my $lastEntry = MT::Entry->load({id => $lastEntryId});
-        my @entries = MT::Entry->load({blog_id => $blog_id, authored_on => { '<' => $lastEntry->authored_on }}, {sort => 'authored_on', direction => 'descend', limit => 10});
+
+	##This attempts to load up to 10 entries that were published right before the entry that was last displayed
+	##on one of the pages which can call this Ajax functionality.
+
+        my @entries = MT::Entry->load(
+				{
+					blog_id => $blog_id, 
+					authored_on => { '<' => $lastEntry->authored_on }
+				}, 
+				{
+					sort => 'authored_on', 
+					direction => 'descend', 
+					limit => 10
+				});
 	my $str = '';
 	
 	foreach my $entry (@entries)
