@@ -2,12 +2,23 @@ name: mtTouch
 id: mtTouch
 key: mtTouch
 version: 1.0 beta 1
+author_name: Mike Thomsen
+author_link: http://www.codemonkeyramblings.com
 description: mtTouch is based on the work of the wpTouch project. It is released under the GNU GPL license.
+blog_config_template: blog_config.tmpl
+
+settings:
+    mttouch_google_adsense_id:
+        scope: blog
+        default: ''
+    mttouch_google_adsense_channel:
+        scope: blog
+        default: ''
 
 tags:
     function:
-        MTTouchAdsenseId: $mtTouch::MTTouch::Tags::_hdlr_mtt_adsense_id
-        MTTouchAdsenseChannel: $mtTouch::MTTouch::Tags::_hdlr_mtt_adsense_channel
+        AdsenseId: $mtTouch::MTTouch::Tags::_hdlr_mtt_adsense_id
+        AdsenseChannel: $mtTouch::MTTouch::Tags::_hdlr_mtt_adsense_channel
 
 template_sets:
     mtTouch:
@@ -63,6 +74,8 @@ template_sets:
                     label: Search Results
                     description_label: Displays results of a search.
             module:
+                adsense:
+                    label: Google AdSense
                 comment_area:
                     label: Comment Area
                 comment_form: 

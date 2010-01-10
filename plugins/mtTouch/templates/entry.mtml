@@ -14,9 +14,11 @@
 			<div class="single-post-meta-top"><$mt:EntryDate format="%b %d, %Y @ %H:%S"$> &rsaquo; <$mt:EntryAuthorDisplayName$><br />
 				<a href="#respond">&darr; Leave a comment</a>
 			</div>
-		<div class="clearer"></div>
-	</div>
-
+			<div class="clearer"></div>
+		</div>
+		<mt:If tag="AdsenseId" ne="">
+			<$mt:Include module="Adsense"$>
+		</mt:If>
 			
          <div class="post" id="post-<$mt:EntryID$>">
          	<div id="singlentry" class=" full-justified">
