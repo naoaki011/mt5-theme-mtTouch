@@ -3,14 +3,14 @@ use strict;
 
 sub _get_val
 {
-	my ($ctx, $args, $cond, ) = @_;
+	my ($ctx, $args, $cond, $config_key) = @_;
 	my $plugin = MT->component('MTTouch');
 	
 	my $blog = $ctx->stash('blog');
 	
 	if ($blog and $blog->id)
 	{
-		return $plugin->get_config_value('$config_key', 'blog:' . $blog->id);
+		return $plugin->get_config_value($config_key, 'blog:' . $blog->id);
 	}
 	
 	return '';
