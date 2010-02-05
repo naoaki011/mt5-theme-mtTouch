@@ -10,7 +10,7 @@
 
 	<div class="content">
 		<div class="post">
-			<a class="sh2" href="<$mt:EntryPermalink$>" rel="bookmark" title="Permanent Link to <$mt:EntryTitle$>"><$mt:EntryTitle$></a>
+			<a class="sh2" href="<$mt:EntryPermalink regex_replace="$rep","$rer" $>" rel="bookmark" title="Permanent Link to <$mt:EntryTitle$>"><$mt:EntryTitle$></a>
 			<div class="single-post-meta-top"><$mt:EntryDate format="%b %d, %Y @ %H:%S"$> &rsaquo; <$mt:EntryAuthorDisplayName$><br />
 				<a href="#respond">&darr; Leave a comment</a>
 			</div>
@@ -40,15 +40,15 @@
 		<ul id="post-options">
 			<li>
 				<mt:EntryPrevious>
-      					<a href="<$mt:EntryPermalink$>" title="<$mt:EntryTitle escape="html"$>" id="oprev"></a>
+      					<a href="<$mt:EntryPermalink regex_replace="$rep","$rer" $>" title="<$mt:EntryTitle escape="html"$>" id="oprev"></a>
     				</mt:EntryPrevious>
     			</li>
-			<li><a href="mailto:?subject=<$mt:BlogName$> - <$mt:EntryTitle$>&body=Check out this post:%20<$mt:EntryPermalink encode_url="1"$>" onclick="return confirm('Mail a link to this post?');" id="omail"></a></li>
+			<li><a href="mailto:?subject=<$mt:BlogName$> - <$mt:EntryTitle$>&body=Check out this post:%20<$mt:EntryPermalink regex_replace="$rep","$rer" $>" onclick="return confirm('Mail a link to this post?');" id="omail"></a></li>
 			<li><a href="javascript:return false;" onclick="wptouch_toggle_twitter();" id="otweet"></a></li>
 			<li><a href="javascript:return false;" onclick="wptouch_toggle_bookmarks();" id="obook"></a></li>
 			<li>
 				<mt:EntryNext>
-					<a href="<$mt:EntryPermalink$>" title="<$mt:EntryTitle escape="html"$>" id="onext"></a>
+					<a href="<$mt:EntryPermalink regex_replace="$rep","$rer" $>" title="<$mt:EntryTitle escape="html"$>" id="onext"></a>
     				</mt:EntryNext>
 			</li>
 		</ul>
@@ -66,13 +66,13 @@
   	<div id="bookmark-box" style="display:none">
 		<ul>
 
-			<li><a href="http://del.icio.us/post?url=<$mt:EntryPermalink encode_url="1"$>&title=<$mt:EntryTitle encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/delicious.jpg" alt="" /> Del.icio.us</a></li>
-			<li><a href="http://digg.com/submit?phase=2&url=<$mt:EntryPermalink encode_url="1"$>&title=<$mt:EntryTitle encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/digg.jpg" alt="" /> Digg</a></li>
-			<li><a href="http://technorati.com/faves?add=<$mt:EntryPermalink encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/technorati.jpg" alt="" /> Technorati</a></li>
-			<li><a href="http://ma.gnolia.com/bookmarklet/add?url=<$mt:EntryPermalink encode_url="1"$>&title=<$mt:EntryTitle encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/magnolia.jpg" alt="" /> Magnolia</a></li>
-			<li><a href="http://www.newsvine.com/_wine/save?popoff=0&u=<$mt:EntryPermalink encode_url="1"$>&title=<$mt:EntryTitle encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/newsvine.jpg" target="_blank"> Newsvine</a></li>
+			<li><a href="http://del.icio.us/post?url=<$mt:EntryPermalink regex_replace="$rep","$rer" $>&title=<$mt:EntryTitle $>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/delicious.jpg" alt="" /> Del.icio.us</a></li>
+			<li><a href="http://digg.com/submit?phase=2&url=<$mt:EntryPermalink regex_replace="$rep","$rer" $>&title=<$mt:EntryTitle $>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/digg.jpg" alt="" /> Digg</a></li>
+			<li><a href="http://technorati.com/faves?add=<$mt:EntryPermalink regex_replace="$rep","$rer" $>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/technorati.jpg" alt="" /> Technorati</a></li>
+			<li><a href="http://ma.gnolia.com/bookmarklet/add?url=<$mt:EntryPermalink regex_replace="$rep","$rer" $>&title=<$mt:EntryTitle $>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/magnolia.jpg" alt="" /> Magnolia</a></li>
+			<li><a href="http://www.newsvine.com/_wine/save?popoff=0&u=<$mt:EntryPermalink regex_replace="$rep","$rer" $>&title=<$mt:EntryTitle $>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/newsvine.jpg" target="_blank"> Newsvine</a></li>
 
-			<li class="noborder"><a href="http://reddit.com/submit?url=<$mt:EntryPermalink encode_url="1"$>&title=<$mt:EntryTitle encode_url="1"$>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/reddit.jpg" alt="" /> Reddit</a></li>
+			<li class="noborder"><a href="http://reddit.com/submit?url=<$mt:EntryPermalink regex_replace="$rep","$rer" $>&title=<$mt:EntryTitle $>" target="_blank"><img src="<$mt:StaticWebPath$>plugins/mtTouch/core-images/bookmarks/reddit.jpg" alt="" /> Reddit</a></li>
 		</ul>
 	</div>
 

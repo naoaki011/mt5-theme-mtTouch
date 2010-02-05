@@ -22,7 +22,7 @@
 	</div>				
 				
 	 
-	<a class="h2" href="<$mt:EntryPermalink$>"><$mt:EntryTitle encode_html="1"$></a>
+	<a class="h2" href="<$mt:EntryPermalink regex_replace="$rep","$rer"$>"><$mt:EntryTitle encode_html="1"$></a>
 	<div class="post-author">
 		<span class="lead">By</span> <$mt:EntryAuthor encode_html="1"$><br />
 		<mt:If tag="EntryCategory" ne="">
@@ -39,6 +39,6 @@
 	<div class="clearer"></div>	
         <div id="entry-<$mt:EntryID$>" style="display:none" class="mainentry  full-justified">
 		<$mt:EntryBody words="30"$>
-		<a class="read-more" href="<$mt:EntryPermalink$>">Read This Post</a>
+		<a class="read-more" href="<$mt:EntryPermalink regex_replace="$rep","$rer"$>">Read This Post</a>
 	</div>  
 </div>

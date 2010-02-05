@@ -47,25 +47,33 @@ template_sets:
                 entry:
                     label: Entry
                     mappings:
-                        entry_archive:
+                        individual:
                             archive_type: Individual
-            page:
+                            file_template: %y/%m/%-f
+                            preferred: 0
                 page:
                     label: Page
                     mappings:
-                        entry_archive:
+                        page:
                             archive_type: Page
+                            file_template: %-c/%-f
+                            preferred: 0
+                            
             archive:
                 monthly_entry_listing:
                     label: Monthly Entry Listing
                     mappings:
                         monthly:
                             archive_type: Monthly
+                            file_template: %y/%m/%i
+                            preferred: 0
                 category_entry_listing:
                     label: Category Entry Listing
                     mappings:
                         category:
                             archive_type: Category
+                            file_template: %-c/%i
+                            preferred: 0
             system:
                 dynamic_error:
                     label: Dynamic Error

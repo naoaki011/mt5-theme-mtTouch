@@ -33,10 +33,10 @@
 
 
 		<div style="text-align:center" class="content-nav">
-			<mt:ArchivePrevious><a href="<$mt:ArchiveLink$>">&laquo; <$mt:ArchiveTitle$></a> |</mt:ArchivePrevious>
+			<mt:ArchivePrevious><a href="<$mt:ArchiveLink regex_replace="$rep","$rer"$>">&laquo; <$mt:ArchiveTitle$></a> |</mt:ArchivePrevious>
 			<a href="<$mt:Link template="main_index"$>">Main Index</a> |
 			<a href="<$mt:Link template="archive_index"$>">Archives</a>
-			<mt:ArchiveNext>| <a href="<$mt:ArchiveLink$>"><$mt:ArchiveTitle$> &raquo;</a></mt:ArchiveNext>
+			<mt:ArchiveNext>| <a href="<$mt:ArchiveLink regex_replace="$rep","$rer"$>"><$mt:ArchiveTitle$> &raquo;</a></mt:ArchiveNext>
 		</div>
 	</div>
 	<div style="text-align:center"
