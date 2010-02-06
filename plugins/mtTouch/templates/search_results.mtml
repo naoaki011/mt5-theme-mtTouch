@@ -70,7 +70,7 @@
     </script>
 </mt:SetVarBlock>
 
-<$mt:Include module="Header"$>
+<$mt:Include module="mtTouch Header"$>
 
 
 <body class="classic-wptouch-bg">
@@ -86,9 +86,9 @@
 	</noscript>
 	<!-- Prowl: if DM is sent, let's tell the user what happened -->
 
-	<$mt:Include module="Login and Search"$>
-	<$mt:Include module="Menu"$>
-	<$mt:Include module="Headerbar"$>
+	<$mt:Include module="mtTouch Login and Search"$>
+	<$mt:Include module="mtTouch Menu"$>
+	<$mt:Include module="mtTouch Headerbar"$>
 
 	<div id="drop-fade">
 		<a id="searchopen" class="top" href="#" onclick="bnc_jquery_search_toggle(); return false;">Search</a>
@@ -134,7 +134,7 @@
                                 </div>
                                 <div class="search-results-container autopagerize_page_element">
     </mt:SearchResultsHeader>
-                                    <$mt:Include module="Entry Display" hide_counts="1"$>
+                                    <$mt:Include module="mtTouch Entry Display" hide_counts="1"$>
     <mt:SearchResultsFooter>
                                 </div><div class="autopagerize_insert_before"></div>
 
@@ -196,7 +196,7 @@ var timer = window.setTimeout("getResults(" + <$mt:CurrentPage$> + ")", 1*1000);
 	</div>
 
 
-	<$mt:Include module="Footer"$>
+	<$mt:Include module="mtTouch Footer"$>
 
 </body>
 </html>

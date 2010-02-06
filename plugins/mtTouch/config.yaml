@@ -15,6 +15,11 @@ settings:
         scope: blog
         default: ''
 
+applications:
+    cms:
+        methods:
+            mttouch_install_templates: $mtTouch::MTTouch::Plugin::install_templates
+
 tags:
     function:
         AdsenseId: $mtTouch::MTTouch::Tags::_hdlr_mtt_adsense_id
@@ -28,47 +33,47 @@ template_sets:
         templates:
             index:
                 main_index:
-                    label: Main Index
+                    label: mtTouch Main Index
                     outfile: index.html
                     rebuild_me: 1
                 archive_index:
-                    label: Archive Index
+                    label: mtTouch Archive Index
                     outfile: archives.html
                     rebuild_me: 1
                 mt_jquery_plugin:
-                    label: MT jQuery Plugin
-                    outfile: jquery.mt.js
+                    label: mtTouch MT jQuery Plugin
+                    outfile: jquery.mt.mtTouch.js
                     rebuild_me: 1
                 stylesheet:
-                    label: Stylesheet
+                    label: mtTouch Stylesheet
                     outfile: mtTouch.styles.css
                     rebuild_me: 1
             individual:
                 entry:
-                    label: Entry
+                    label: mtTouch Entry
                     mappings:
                         individual:
                             archive_type: Individual
-                            file_template: %y/%m/%-f
+                            file_template: mobile/%y/%m/%-f
                             preferred: 0
                 page:
-                    label: Page
+                    label: mtTouch Page
                     mappings:
                         page:
                             archive_type: Page
-                            file_template: %-c/%-f
+                            file_template: mobile/%-c/%-f
                             preferred: 0
                             
             archive:
                 monthly_entry_listing:
-                    label: Monthly Entry Listing
+                    label: mtTouch Monthly Entry Listing
                     mappings:
                         monthly:
                             archive_type: Monthly
                             file_template: %y/%m/%i
                             preferred: 0
                 category_entry_listing:
-                    label: Category Entry Listing
+                    label: mtTouch Category Entry Listing
                     mappings:
                         category:
                             archive_type: Category
@@ -83,27 +88,27 @@ template_sets:
                     description_label: Displays results of a search.
             module:
                 adsense:
-                    label: Google AdSense
+                    label: mtTouch Google AdSense
                 comment_area:
-                    label: Comment Area
+                    label: mtTouch Comment Area
                 comment_form: 
-                    label: Comment Form
+                    label: mtTouch Comment Form
                 core_style:
-                    label: Core-Style
+                    label: mtTouch Core-Style
                 entry_display:
-                    label: Entry Display
+                    label: mtTouch Entry Display
                 footer:
-                    label: Footer
+                    label: mtTouch Footer
                 header:
-                    label: Header
+                    label: mtTouch Header
                 headerbar:
-                    label: Headerbar
+                    label: mtTouch Headerbar
                 login_and_search:
-                    label: Login and Search
+                    label: mtTouch Login and Search
                 menu:
-                    label: Menu
+                    label: mtTouch Menu
                 noscript_message:
-                    label: Noscript Message
+                    label: mtTouch Noscript Message
                 prowl:
-                    label: Prowl
+                    label: mtTouch Prowl
 

@@ -1,12 +1,12 @@
 <$mt:EntryTitle setvar="more_title_contents"$>
-<$mt:Include module="Header"$>
+<$mt:Include module="mtTouch Header"$>
 	
 <body class="classic-wptouch-bg">
-	<$mt:Include module="Noscript Message"$>
-	<$mt:Include module="Login and Search"$>
-	<$mt:Include module="Menu"$>
-	<$mt:Include module="Headerbar"$>
-	<$mt:Include module="Prowl"$>
+	<$mt:Include module="mtTouch Noscript Message"$>
+	<$mt:Include module="mtTouch Login and Search"$>
+	<$mt:Include module="mtTouch Menu"$>
+	<$mt:Include module="mtTouch Headerbar"$>
+	<$mt:Include module="mtTouch Prowl"$>
 
 	<div class="content">
 		<div class="post">
@@ -17,7 +17,7 @@
 			<div class="clearer"></div>
 		</div>
 		<mt:If tag="AdsenseId" ne="">
-			<$mt:Include module="Adsense"$>
+			<$mt:Include module="mtTouch Adsense"$>
 		</mt:If>
 			
          <div class="post" id="post-<$mt:EntryID$>">
@@ -76,12 +76,12 @@
 		</ul>
 	</div>
 
-	<$mt:Include module="Comment Area"$>
+	<$mt:Include module="mtTouch Comment Area"$>
 
 
 	</div>
 
 	
-	<$mt:Include module="Footer"$>
+	<$mt:Include module="mtTouch Footer"$>
 </body>
 </html>

@@ -1,16 +1,14 @@
-<$mt:Include module="Header"$>
+<$mt:Include module="mtTouch Header"$>
 <body class="classic-wptouch-bg">
-	<$mt:Include module="Noscript Message"$>
-
-	<$mt:Include module="Login and Search"$>
-	<$mt:Include module="Menu"$>
-	<$mt:Include module="Headerbar"$>
-	<$mt:Include module="Prowl"$>
-
+	<$mt:Include module="mtTouch Noscript Message"$>
+	<$mt:Include module="mtTouch Login and Search"$>
+	<$mt:Include module="mtTouch Menu"$>
+	<$mt:Include module="mtTouch Headerbar"$>
+	<$mt:Include module="mtTouch Prowl"$>
 
 	<div class="content" id="contentArea">	
 	<mt:Entries limit="10">
-		<$mt:Include module="Entry Display"$>
+		<$mt:Include module="mtTouch Entry Display"$>
 		<mt:If name="__last__">
 		<script type="text/javascript">
 			lastID = <$mt:EntryID$>;
@@ -21,6 +19,6 @@
 	<div style="text-align:center">
 		<a href="#" id="lnkMore">More!</a>
 	</div>
-	<$mt:Include module="Footer"$>
+	<$mt:Include module="mtTouch Footer"$>
 </body>
 </html>
