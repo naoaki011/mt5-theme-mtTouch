@@ -14,9 +14,9 @@
 	<link rel="apple-touch-icon" href="<$mt:StaticWebPath$>plugins/mtTouch/images/icon-pool/Default.png" />
 	<link rel="stylesheet" href="<mt:Link template="Stylesheet"$>" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<$mt:StaticWebPath$>plugins/mtTouch/css/gigpress.css" type="text/css" media="screen" />
-	<$mt:Include module="Core-Style"$>
+	<$mt:Include module="mtTouch Core-Style"$>
 	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.js" type="text/javascript" charset="utf-8"></script>
-	<script src="<$mt:Link template="MT jQuery plugin"$>" type="text/javascript" charset="utf-8"></script>
+	<script src="<$mt:Link template="mtTouch MT jQuery plugin"$>" type="text/javascript" charset="utf-8"></script>
 	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.form.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.mtauth.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<mt:StaticWebPath$>plugins/mtTouch/js/jquery.mtgreeting.js" type="text/javascript" charset="utf-8"></script>
@@ -29,10 +29,16 @@ function mtTouch_hidetop() {
 	bnc_jquery_menu_drop();
 }
 
+var firstLoad = true;
+
 function fetchUserCallback(u) {
 	if (!u || !u.name) return;
 	$("#head-account li.text").html('<p>Thanks for signing in, ' + u.name + '</p>');
-	mtTouch_hidetop();
+	
+	if (!firstLoad) 
+		mtTouch_hidetop();
+	else
+		firstLoad = false;
 }
 
 $(document).ready(function() {
