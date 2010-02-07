@@ -3,8 +3,8 @@ use strict;
 
 sub _get_val
 {
-	my ($ctx, $args, $cond, $config_key) = @_;
-	my $plugin = MT->component('MTTouch');
+	my ($ctx, $args, $config_key) = @_;
+	my $plugin = MT->component('mtTouch');
 	
 	my $blog = $ctx->stash('blog');
 	
